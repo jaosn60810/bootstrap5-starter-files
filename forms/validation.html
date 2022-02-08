@@ -14,16 +14,16 @@
 </ol>
 
 <div class="demo">
-  <form class="row g-3 練習" 練習>
+  <form class="row g-3 needs-validation" novalidate>
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">First name</label>
       <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-      <!-- <div class="valid-feedback">
+      <div class="valid-feedback">
         Looks good!
-      </div> -->
-      <!-- <div class="invalid-feedback">
+      </div>
+      <div class="invalid-feedback">
         Looks bad!
-      </div> -->
+      </div>
     </div>
     <div class="col-md-4">
       <label for="validationCustom02" class="form-label">Last name</label>
@@ -147,11 +147,11 @@
   <form class="row g-3">
     <div class="col-md-4">
       <label for="validationServer01" class="form-label">First name</label>
-      <input type="text" class="form-control 練習" id="validationServer01" value="Mark" required>
-      <div class="練習">
+      <input type="text" class="form-control is-invalid" id="validationServer01" value="Mark" required>
+      <div class="valid-feedback">
         Looks good!
       </div>
-      <div class="練習">
+      <div class="invalid-feedback">
         Looks bad!
       </div>
     </div>
@@ -224,7 +224,7 @@
 <p>.was-validated 是一個狀態，代表已經驗證過（但驗證狀態還是會依據用戶行為再次調整</p>
 
 <div class="demo">
-  <form class="練習">
+  <form class="was-validated">
     <div class="mb-3">
       <label for="validationTextarea" class="form-label">Textarea</label>
       <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea>
@@ -279,14 +279,14 @@
     <div class="col-md-4 position-relative">
       <label for="validationTooltip01" class="form-label">First name</label>
       <input type="text" class="form-control" id="validationTooltip01" value="Mark" required>
-      <div class="練習">
+      <div class="valid-tooltip">
         Looks good!
       </div>
     </div>
     <div class="col-md-4 position-relative">
       <label for="validationTooltip02" class="form-label">Last name</label>
       <input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
-      <div class="練習">
+      <div class="invalid-tooltip">
         Looks bad!
       </div>
     </div>
@@ -332,25 +332,25 @@
 
 <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
-  // (function () {
-  //   'use strict';
+  (function () {
+    'use strict';
   
-  //   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  //   var forms = document.querySelectorAll('.needs-validation');
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation');
   
-  //   // Loop over them and prevent submission
-  //   Array.prototype.slice.call(forms)
-  //     .forEach(function (form) {
-  //     form.addEventListener('submit', function (event) {
-  //       if (!form.checkValidity()) {
-  //         event.preventDefault()
-  //         event.stopPropagation()
-  //       }
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
   
-  //       form.classList.add('was-validated')
-  //     }, false)
-  //   })
-  // })()
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
 </script>
 <!-- 🙇🙇練習結束🙇🙇 -->
 </main>
